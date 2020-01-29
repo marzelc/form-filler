@@ -25,9 +25,9 @@ const FormFillerDefaultOptions = (): IFormFillerOptions => {
       matchPlaceholder: false,
     },
     fields: [],
-    ignoreFieldsWithContent: false,
-    ignoreHiddenFields: true,
-    ignoredFields: ['captcha', 'hipinputtext'],
+    ignoreFieldsWithContent: true,
+    ignoreHiddenFields: false,
+    ignoredFields: ['captcha', 'hipinputtext', 'addOn'],
     passwordSettings: {
       mode: 'defined',
       password: 'Pa$$w0rd!',
@@ -119,7 +119,7 @@ const FormFillerDefaultOptions = (): IFormFillerOptions => {
     name: 'Year',
     match: ['year'],
     min: 1970,
-    max: 2019,
+    max: 2000,
     decimalPlaces: 0,
   });
 

@@ -387,14 +387,10 @@ class ElementFiller {
         break;
 
       case 'tel':
-        const telephoneCustomField = this.findCustomField(this.getElementName(element), [
-          'telephone',
-          'regex',
-          'randomized-list',
-        ]);
+        const telephoneCustomField = this.findCustomField(this.getElementName(element));
 
         if (telephoneCustomField) {
-          element.value = this.generateDummyDataForCustomField(telephoneCustomField, element);
+          element.value = this.generateDummyDataForCustomField(telephoneCustomField, element).padStart(2, '0');
         } else {
           element.value = this.generator.phoneNumber();
         }
